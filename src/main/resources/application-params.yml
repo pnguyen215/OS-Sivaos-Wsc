@@ -1,0 +1,13 @@
+sivaos:
+  app: sivaos-wsc
+  app-build: buildSIVAOSWsc
+  app-run: RUN_SIVAOS_Wsc
+  app-jar: SIVAOS-Wsc
+  swagger:
+    description: API reference for developers
+    contact-name: sivaos
+    contact-url: https://github.com/pnguyen215
+    contact-email: sivaglobalos@gmail.com
+    license: sivaos 1.1
+    license-url: https://swagger.io/license/
+    version: v.1.1

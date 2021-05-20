@@ -1,0 +1,75 @@
+# Port
+server:
+  port: 8091
+  tomcat:
+    uri-encoding: UTF-8
+  servlet:
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
+# JDBC
+spring:
+  main:
+    banner-mode: log
+  output:
+    ansi:
+      enabled: always
+  jpa:
+    generate-ddl: true
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        format_sql: true
+        connection:
+          characterEncoding: utf-8
+          CharSet: utf-8
+          useUnicode: true
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          jwk-set-uri: jwtSIVASecretKey
+          jws-algorithm: RS256
+  cache:
+    couchbase:
+      expiration: 846000
+    cache-names: sivaos-cache-dev, sivaos-cache-local, sivaos-cache-prod
+    redis: # allows setting up TTL for the all caches to same value.
+      time-to-live: 60000
+      cache-null-values: true
+      time-expiry-hours: 23
+      time-expiry-minutes: 59
+      time-expiry-seconds: 59
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 4GB
+      max-request-size: 30MB
+      file-size-threshold: 2KB
+  # Mail
+  mail:
+    host: smtp.gmail.com
+    port: 587
+sivaos:
+  parts:
+    upload-dir: roots
+# Hibernate Log Level
+logging:
+  level:
+    root: INFO
+    org:
+      hibernate:
+        SQL: DEBUG
+        type: TRACE
+      springframework:
+        web: DEBUG
+  file:
+    max-size: 2MB # Max log file size
+    total-size-cap: 10MB # Total size of log files
+    max-history: 30 # Log files max history
+    clean-history-on-start: false # Clean history on start
+  pattern:
+    file: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%"
