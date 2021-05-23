@@ -11,7 +11,7 @@ server:
 # JDBC
 spring:
   main:
-    banner-mode: log
+    banner-mode: console
   output:
     ansi:
       enabled: always

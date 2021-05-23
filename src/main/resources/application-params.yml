@@ -11,3 +11,9 @@ sivaos:
     license: sivaos 1.1
     license-url: https://swagger.io/license/
     version: v.1.1
+  scheduler:
+    wsc:
+      enable: false
+      buffer-size: 20971520
+      cron:
+        expressions: "* * * ? * *"

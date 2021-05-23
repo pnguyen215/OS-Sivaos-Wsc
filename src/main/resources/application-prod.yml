@@ -30,3 +30,5 @@ logging:
     rolling-file-name: logs/prod-sivaos-%d{yyyy-MM-dd}.%i.log
   file:
     name: "logs/prod-sivaos.log"
+wsc:
+  url-ws-callback: ws://localhost:8081/events
